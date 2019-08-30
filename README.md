@@ -48,7 +48,7 @@ qiime feature-classifier fit-classifier-naive-bayes \
 --o-classifier Silva_132_release/rep_set/rep_set_all/99/classifier.qza
 ````
 
-Now having everything in place go one up direcory from where your ````.fastq```` files are located. 
+Now having everything in place go one direcory up from where your ````.fastq```` files are located. 
 i.e, if you type ````ls```` it should list directory containing your ````.fastq```` files.
 e.g.
 
