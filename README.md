@@ -81,7 +81,7 @@ rm qiime2-2019.7-py36-linux-conda.yml
    0_basecalled-reads
    ````
    
-   3. Run the q2ONT.sh script: 
+3. Run the q2ONT.sh script: 
 
       ```q2ONT.sh [-i fastq_directory] [-j reference_seqs] [-c classifier] [-t threads]```
 
