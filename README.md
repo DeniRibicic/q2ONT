@@ -75,7 +75,7 @@ rm qiime2-2019.7-py36-linux-conda.yml
    Now having everything in place go one direcory up from where your ````.fastq```` files are located. 
    i.e, if you type ````ls```` it should list directory containing your ````.fastq```` files.
    e.g.
-
+       
        ````
        ls
        0_basecalled-fastq
@@ -84,7 +84,7 @@ rm qiime2-2019.7-py36-linux-conda.yml
 
 3. Run the q2ONT.sh script: 
 
-       ```` q2ONT.sh [-i fastq_directory] [-j reference_seqs] [-c classifier] [-t threads]````
+      ```q2ONT.sh [-i fastq_directory] [-j reference_seqs] [-c classifier] [-t threads]```
 
 
     where:
