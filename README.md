@@ -24,7 +24,7 @@ rm qiime2-2019.7-py36-linux-conda.yml
   
 ````conda install -c bioconda trimmomatic````
 
-  -Porechop
+  - Porechop
 
 ````
 git clone https://github.com/rrwick/Porechop.git
@@ -112,3 +112,33 @@ porechop -h
        
    
  Happy QIIMEing!!
+ 
+ 
+ ### What does script do?
+ 
+ The file output from the workflow can be traced based on file indexing (prefix numbers added as the files are generated).  
+ 
+ 1) First step includes concatenating all ````.fastq```` files into one file.
+ 
+ 2) ````porechop```` is employed to demultiplex your reads.
+ 
+ 3) ````trimmomatic```` will discard all reads shorter than 1400 bp. All reads longer than 1400 bp will be cropped to that length.
+    These settings can be changed if desired, you will just have to modify it manually beofre running the script. You want to look at        ````MINLEN:1400 CROP:1400```` parameter.
+    
+ 4) QIIME2 imports now reads creating ````4_single-end-demux.qza```` artefact together with visualization file                               ````4_single-end-demux.qzv```` which can be viewed in QIIME2View online tool.
+ 
+ 5) q2 will dereplicate sequences and create also visualization files for each.
+ 
+ 6) Chimeric sequences are screened for and are filtered out from the workflow. Subsequently OTUs are clustered via open reference           option using ````vsearch```` at 85% identity. This can be also changed manually digging into script. However, due to high error rate     of ONT platform, it is advised to cluster otu at 85% similarity or even less*.
+ 
+ 7) Reads are aligned using ````mafft````
+ 
+ 8) Alignments are masked.
+ 
+ 9) Un-rooted tree is created.
+ 
+ 10) Rooted tree is created.
+ 
+ 11) Taxonomy is assigned using pre-trained SILVA classifier
+ 
+ * Curren, Emily, et al. "Rapid profiling of tropical marine cyanobacterial communities." Regional Studies in Marine Science 25 (2019):    100485.
