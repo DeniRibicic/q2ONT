@@ -5,6 +5,7 @@ Bash pipeline for QIIME2 analysis of ONT generated full-length 16S rRNA sequence
 
 ### Prerequsites 
   - Miniconda 3
+  
 ````
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod u+x Miniconda3-latest-Linux-x86_64.sh
@@ -12,6 +13,7 @@ chmod u+x Miniconda3-latest-Linux-x86_64.sh
 conda update conda
 ````    
   - QIIME2
+  
 ````
 wget https://data.qiime2.org/distro/core/qiime2-2019.7-py36-linux-conda.yml
 conda env create -n qiime2-2019.7 --file qiime2-2019.7-py36-linux-conda.yml
@@ -19,6 +21,7 @@ conda env create -n qiime2-2019.7 --file qiime2-2019.7-py36-linux-conda.yml
 rm qiime2-2019.7-py36-linux-conda.yml
 ````
   - Trimmomatic
+  
 ````conda install -c bioconda trimmomatic````
 
 
@@ -26,6 +29,7 @@ rm qiime2-2019.7-py36-linux-conda.yml
   - clone Git repository or just download q2ONT.sh script
   
   - Latest Silva q2 compatible db, i.e v.132
+  
   ```` wget https://www.arb-silva.de/download/archive/qiime/SILVA_132_release.zip````
 
 
@@ -38,13 +42,15 @@ rm qiime2-2019.7-py36-linux-conda.yml
 2. If not already done, you need to convert Silva representative sequnces (e.g. 99_otus.fasta) and corresponding taxonomy into q2          artefact.
 
       You can do this as follows:
+      
             ````
             qiime tools import \
             --input-path Silva_132_release/rep_set/rep_set_all/99/99_otus.fasta \
             --output-path Silva_132_release/rep_set/rep_set_all/99/99_otus.qza 
             --type 'FeatureData[Sequence]'
             ````
-      and 
+      and
+      
             ````
             qiime tools import \
             --input-path Silva_132_release/taxonomy/taxonomy_all/99/consensus_taxonomy_7_levels.txt \
@@ -52,9 +58,11 @@ rm qiime2-2019.7-py36-linux-conda.yml
             --type 'FeatureData[Taxonomy]' \
             --input-format HeaderlessTSVTaxonomyFormat
             ````
+      
       Also, you will need to train classifier which will be used during taxonomical annotation.
 
-      You can do this as follows: 
+      You can do this as follows:
+      
              ````
              qiime feature-classifier fit-classifier-naive-bayes \
              --i-reference-reads Silva_132_release/rep_set/rep_set_all/99/99_otus.qza \
@@ -89,11 +97,15 @@ rm qiime2-2019.7-py36-linux-conda.yml
 
 
 
+
 4. After a successful run, direcotry ````exported```` should be generated. This directory will contain files in native format (not q2      artefact) all ready to be loaded in Phyloseq package for further data exploration;
 
        1. biom file with added taxonomy (````table-with-taxonomy.biom````)
        2. newick tree file (````tree.nwk````) and 
        3. representative sequences file (````dna-sequences.fasta````) 
 
+  
+  
+  
   
   Happy QIIMEing!!
