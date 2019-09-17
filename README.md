@@ -70,3 +70,12 @@ where:
 ````[-c classifier]```` is q2 pretrained classifier; e.g.````classifier.qza````. Use complete path to it.
 
 ````[-t threads]```` is the number of CPU threads you want to use
+
+After a successful run, direcotry ````exported```` should be generated. This folder will contain files in native format (not q2 artefact);
+
+1. biom file with added taxonomy (````table-with-taxonomy.biom````)
+2. newick tree file (````tree.nwk````) and 
+3. representative sequences file (````dna-sequences.fasta````) 
+
+Happy qiimeing!
+all ready to be loaded in Phyloseq package for further data exploration.
