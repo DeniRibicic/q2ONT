@@ -75,27 +75,26 @@ rm qiime2-2019.7-py36-linux-conda.yml
    Now having everything in place go one direcory up from where your ````.fastq```` files are located. 
    i.e, if you type ````ls```` it should list directory containing your ````.fastq```` files.
    e.g.
-       
-       ````
-       ls
-       0_basecalled-fastq
-       ````
-
-
-3. Run the q2ONT.sh script: 
+   
+   ````
+   ls
+   0_basecalled-reads
+   ````
+   
+   3. Run the q2ONT.sh script: 
 
       ```q2ONT.sh [-i fastq_directory] [-j reference_seqs] [-c classifier] [-t threads]```
 
 
     where:
+ 
+      ````[-i fastq_directory]```` is the directory containing all of your basecalled ````.fastq```` files; e.g ````0_basecalled-fastq````
 
-       ````[-i fastq_directory]```` is the directory containing all of your basecalled ````.fastq```` files; e.g ````0_basecalled-fastq````
+      ````[-j reference_seqs]```` is reference sequence q2 artefact; e.g ````99_otus.qza````. Use complete path to it.
 
-       ````[-j reference_seqs]```` is reference sequence q2 artefact; e.g ````99_otus.qza````. Use complete path to it.
+      ````[-c classifier]```` is q2 pretrained classifier; e.g.````classifier.qza````. Use complete path to it.
 
-       ````[-c classifier]```` is q2 pretrained classifier; e.g.````classifier.qza````. Use complete path to it.
-
-       ````[-t threads]```` is the number of CPU threads you want to use
+      ````[-t threads]```` is the number of CPU threads you want to use
        
  4. After a successful run, direcotry ````exported```` should be generated. This directory will contain files in native format (not q2      artefact) all ready to be loaded in Phyloseq package for further data exploration;
 
