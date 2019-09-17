@@ -78,7 +78,7 @@ rm qiime2-2019.7-py36-linux-conda.yml
    
    ````
    ls
-   0_basecalled-reads
+   0_basecalled-fastq
    ````
    
 3. Run the q2ONT.sh script: 
