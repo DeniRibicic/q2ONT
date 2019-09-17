@@ -24,6 +24,14 @@ rm qiime2-2019.7-py36-linux-conda.yml
   
 ````conda install -c bioconda trimmomatic````
 
+  -Porechop
+
+````
+git clone https://github.com/rrwick/Porechop.git
+cd Porechop
+python3 setup.py install
+porechop -h
+````
 
 ### Downloads
   - clone Git repository or just download q2ONT.sh script
