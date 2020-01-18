@@ -1,9 +1,9 @@
 #!/bin/bash
 #  This is a wrapper script for automation of QIIME2 analysis of ONT generated full-length 16S rRNA amplicons.
 #
-#  Version 1.0 (August 20, 2019)
+#  Version 2.0 (January 18, 2020)
 #
-#  This script is adjusted to work with qiime2-2019.4 release
+#  This script is adjusted to work with qiime2-2019.10 release
 #
 #  Copyright (c) 2019-2020 Deni Ribicic
 #
@@ -119,8 +119,8 @@ echo ""
 echo ""
 #  load QIIME2
 echo "activating QIIME2..."
-source activate qiime2-2019.4
-echo "qiime2-2019.4 active"
+source activate qiime2-2019.10
+echo "qiime2-2019.10 active"
 
 #  Get input files and locations
 echo "looking for input files ..."
