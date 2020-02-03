@@ -129,7 +129,7 @@ porechop -h
  
  5) q2 will dereplicate sequences and create also visualization files for each.
  
- 6) Chimeric sequences are screened for and are filtered out from the workflow. Subsequently OTUs are clustered via open reference           option using ````vsearch```` at 85% identity. This can be also changed manually digging into script. However, due to high error rate     of ONT platform, it is advised to cluster otu at 85% similarity or even less*.
+ 6) Chimeric sequences are screened for and are filtered out from the workflow. Subsequently OTUs are clustered via open reference           option using ````vsearch```` at 85% identity. This can be also changed manually digging into script. However, due to high error rate     of ONT platform, it is advised to cluster OTUs at 85% similarity or even less*.
  
  7) Reads are aligned using ````mafft````
  
@@ -141,4 +141,5 @@ porechop -h
  
  11) Taxonomy is assigned using pre-trained SILVA classifier
  
- * Curren, Emily, et al. "Rapid profiling of tropical marine cyanobacterial communities." Regional Studies in Marine Science 25 (2019):    100485.
+ 
+ *.Curren, Emily, et al. "Rapid profiling of tropical marine cyanobacterial communities." Regional Studies in Marine Science 25 (2019):    100485.
